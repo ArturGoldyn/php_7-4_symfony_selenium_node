@@ -17,7 +17,7 @@ RUN su - application -c "composer global require hirak/prestissimo"
 
 RUN mkdir -p /usr/share/man/man1 # workaround for error
 RUN apt-get update
-RUN apt-get install -y openjdk-8-jdk-headless screen maven xvfb
+RUN apt-get install -y openjdk-11-jdk-headless screen maven xvfb
 RUN apt-get install -y firefox-esr
 RUN apt-get install -y wget
 RUN cd /root && wget https://chromedriver.storage.googleapis.com/78.0.3904.105/chromedriver_linux64.zip
