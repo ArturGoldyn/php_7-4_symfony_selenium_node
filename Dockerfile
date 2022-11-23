@@ -13,13 +13,13 @@ RUN mv /composer.phar /usr/bin/composer.phar
 RUN ln /usr/bin/composer.phar /usr/bin/composer
 RUN apt-get install -yqq python
 RUN adduser --disabled-password -gecos "" application
-RUN su - application -c "composer global require hirak/prestissimo"
+#RUN su - application -c "composer global require hirak/prestissimo"
 
 RUN mkdir -p /usr/share/man/man1 # workaround for error
 RUN apt-get update
 RUN apt-get install -y openjdk-11-jdk-headless screen maven xvfb
 RUN apt-get install -y firefox-esr
-RUN apt-get install -y wget
+RUN apt-get install -y wget libgbm1
 RUN cd /root && wget https://chromedriver.storage.googleapis.com/78.0.3904.105/chromedriver_linux64.zip
 RUN cd /root && unzip chromedriver_linux64.zip
 RUN cp /root/chromedriver /bin/
@@ -45,3 +45,5 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
 RUN apt-get install nodejs -y
 RUN apt-get install -y mariadb-client
 RUN docker-php-ext-install mysqli
+
+RUN apt-get update -yqq && apt-get -y install screen netcat default-mysql-client
