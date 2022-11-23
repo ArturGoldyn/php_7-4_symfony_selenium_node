@@ -20,7 +20,7 @@ RUN apt-get update
 RUN apt-get install -y openjdk-11-jdk-headless screen maven xvfb
 RUN apt-get install -y firefox-esr
 RUN apt-get install -y wget libgbm1
-RUN cd /root && wget https://chromedriver.storage.googleapis.com/78.0.3904.105/chromedriver_linux64.zip
+RUN cd /root && wget https://chromedriver.storage.googleapis.com/107.0.5304.62/chromedriver_linux64.zip
 RUN cd /root && unzip chromedriver_linux64.zip
 RUN cp /root/chromedriver /bin/
 RUN cd /root && wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
